@@ -1,7 +1,5 @@
-sanity/node_modules
-gatsby/node_modules
-sanity/launch.pad
-gatsby/launch.pad
+# shopify settings
+config.yml
 
 haters/
 
@@ -65,9 +63,7 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
-.cache/
-public
+
 
 # Mac files
 .DS_Store
@@ -79,4 +75,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-finished-files-before-record/
+
+
