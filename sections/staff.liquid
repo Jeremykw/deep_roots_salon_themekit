@@ -1,0 +1,55 @@
+<div class="staff_grid">
+{% for block in section.blocks %}
+  <div class="staff">
+    {{ block.settings.staff_image | img_url: '1024x' | img_tag }}
+    <h1>{{ block.settings.staff_name }}</h1>
+    <p>{{ block.settings.staff_description }}</p>
+  </div>
+{% endfor %}
+</div>
+
+{% stylesheet 'scss' %}
+  .staff_grid {
+    background: black;
+  }
+  .staff {
+    p {
+      color: white;
+    }
+}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+
+
+{% schema %}
+{
+    "name": "Staff",
+    "blocks": [
+      {
+        "type": "staff",
+        "name": "Staff",
+        "settings": [
+          {
+            "id": "staff_image",
+            "type": "image_picker",
+            "label": "Picture"
+          },
+          {
+              "id": "staff_name",
+              "type": "text",
+              "label": "Name"
+          },
+          {
+              "id": "staff_description",
+              "type": "textarea",
+              "label": "Description"
+          }
+        ]
+      }
+    ]
+}
+{% endschema %}
