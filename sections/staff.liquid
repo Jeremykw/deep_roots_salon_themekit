@@ -1,23 +1,39 @@
+
+{% if section.settings.staff_heading.size > 0 %}
+	<div class="section-header text-center">
+		<h1>{{ section.settings.staff_heading }}</h1>
+	</div>
+{% endif %}
+
 <div class="staff_grid">
-{% for block in section.blocks %}
-  <div class="staff">
-    {{ block.settings.staff_image | img_url: '1024x' | img_tag }}
-    <h1>{{ block.settings.staff_name }}</h1>
-    <p>{{ block.settings.staff_description }}</p>
-  </div>
-{% endfor %}
+  {% for block in section.blocks %}
+    <div class="staff">
+      <div class="staff_pic">{{ block.settings.staff_image | img_url: '200x' | img_tag }}</div>
+      <div class="staff_title"><h1>{{ block.settings.staff_name }}</h1></div>
+      <div class="staff_desc"><p>{{ block.settings.staff_description }}</p></div> 
+    </div>
+  {% endfor %}
 </div>
 
-{% stylesheet 'scss' %}
-  .staff_grid {
-    display: grid;
-    background: black;
-  }
-  .staff {
-    p {
-      color: white;
-    }
+<style>
+.staff_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 4rem;
 }
+.staff {
+}
+.staff_desc {
+  height: 150px;
+  overflow: hidden;
+}
+
+</style>
+
+{% stylesheet 'scss' %}
+
 {% endstylesheet %}
 
 {% javascript %}
@@ -28,29 +44,31 @@
 
 {% schema %}
 {
-    "name": "Staff",
-    "blocks": [
-      {
-        "type": "staff",
-        "name": "Staff",
-        "settings": [
-          {
-            "id": "staff_image",
-            "type": "image_picker",
-            "label": "Picture"
-          },
-          {
-              "id": "staff_name",
-              "type": "text",
-              "label": "Name"
-          },
-          {
-              "id": "staff_description",
-              "type": "textarea",
-              "label": "Description"
-          }
-        ]
-      }
-    ]
+	"name": "Staff",
+	"settings": [{
+		"id": "staff_heading",
+		"type": "text",
+		"label": "Heading for Staff Sections"
+	}],
+	"blocks": [{
+		"type": "staff",
+		"name": "Staff",
+		"settings": [{
+				"id": "staff_image",
+				"type": "image_picker",
+				"label": "Picture"
+			},
+			{
+				"id": "staff_name",
+				"type": "text",
+				"label": "Name"
+			},
+			{
+				"id": "staff_description",
+				"type": "textarea",
+				"label": "Description"
+			}
+		]
+	}]
 }
 {% endschema %}
