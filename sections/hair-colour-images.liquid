@@ -1,0 +1,27 @@
+
+{% for block in section.blocks %}
+  <div class="">
+      <div class="">{{ block.settings.colour_image | img_url: '200x' | img_tag }}</div>
+  </div>
+{% endfor %}
+
+{% schema %}
+{ 
+  "name": "Hair Colours Images", 
+  "settings": [], 
+  "blocks": [
+    { 
+  
+      "type": "colour_images",
+      "name": "Colour Image",
+      "settings": [
+        { 
+          "id": "colour_image", 
+          "type": "image_picker", 
+          "label": "Colour Image" 
+        } 
+      ]
+    }    
+  ] 
+} 
+{% endschema %}

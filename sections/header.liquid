@@ -54,6 +54,8 @@
     {% endif %}
   {% endif %}
 
+
+ 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
@@ -104,7 +106,7 @@
 
       {% if section.settings.align_logo == 'left' %}
         <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
-          {% include 'site-nav', linklist: section.settings.main_linklist %}
+          <strong>{% include 'site-nav', linklist: section.settings.main_linklist %}</strong>
         </nav>
       {% endif %}
 
@@ -252,7 +254,6 @@
   </nav>
   {% endif %}
 </div>
-
 
 
 <script type="application/ld+json">

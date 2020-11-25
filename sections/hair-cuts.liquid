@@ -1,0 +1,12 @@
+{% for block in section.blocks %}
+<div class="cut_colour">
+  <div class="">{{ block.settings.title }}</div>
+  <div class="cut_colour_price">${{ block.settings.cut_price }}</div>
+</div>
+
+{% endfor %} 
+
+{% schema %} { "name": "Hair Cuts", "settings": [], "blocks": [ {
+"type": "cuts", "name": "Hair Cuts", "settings": [ { "id": "title", "type":
+"text", "label": "Service" }, { "id": "cut_price", "type": "text", "label":
+"Price" } ] } ] } {% endschema %}

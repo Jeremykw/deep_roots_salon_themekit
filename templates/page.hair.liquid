@@ -1,0 +1,67 @@
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <!-- Cuts -->
+      <div class="service_grid">
+        {% section 'hair-cut-images' %}
+        <div class="service">
+          <h2>Cuts & Styles</h2>
+          {% section 'hair-cuts' %}
+        </div>
+      </div>
+
+      <!-- Colours -->
+      <div class="service_grid">
+        <div class="service">
+          <h2>Colours</h2>
+          {% section 'hair-colour' %}
+        </div>
+        <div class="colour_image">{% section 'hair-colour-images' %}</div>
+      </div>
+
+      <!-- Perms -->
+      <div class="perm">
+        <div class="service">{% section 'hair-perm' %}</div>
+      </div>
+
+      <!-- Rules and Regulations -->
+      {% section 'rules_and_regulations' %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .service_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 3rem;
+  }
+  .perm {
+    display: grid;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+  .service {
+    /* justify-content: center; */
+    /* justify-self: center; */
+    align-self: center;
+    gap: 2rem;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+  .colour_image {
+    justify-self: end;
+  }
+
+  .cut_colour {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cut_colour_price {
+    justify-self: end;
+  }
+</style>

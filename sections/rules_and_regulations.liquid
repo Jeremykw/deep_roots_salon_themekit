@@ -6,20 +6,18 @@
 
 <div class="rules_grid">
   {% for block in section.blocks %}
-    <div class="rules">
-      {% if block.settings.rule_name.size > 0 %}
-        <div class="rule_name">
-          <h2>{{ block.settings.rule_name }}</h2>
-        </div>
+    <details class="rules">
+      {% if block.settings.title.size > 0 %}
+        <summary class="rule_name">
+          <strong>{{ block.settings.title }}</strong>
+        </summary>
       {% endif %}
-
       <div class="rule_desc">
         <p>{{ block.settings.rule_desc }}</p>
       </div>
-    </div>
+    </details>
   {% endfor %}
 </div>
-
 
 {% schema %} 
 { 
@@ -38,9 +36,9 @@
         "settings": 
         [ 
           { 
-            "id": "rule_name", 
+            "id": "title", 
             "type": "text", 
-            "label": "Rule Name" 
+            "label": "Title" 
           }, 
           { 
             "id": "rule_desc", 

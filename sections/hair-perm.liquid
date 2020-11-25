@@ -1,0 +1,8 @@
+<div class="cut_colour">
+  <div class="">{{ section.settings.perm }}</div>
+  <div class="cut_colour_price">${{ section.settings.perm_price }}</div>
+</div>
+
+{% schema %} { "name": "Perms", "settings": [ { "id": "perm", "type": "text",
+"label": "Perm" }, { "id": "perm_price", "type": "text", "label": "Perm Price" }
+] } {% endschema %}
