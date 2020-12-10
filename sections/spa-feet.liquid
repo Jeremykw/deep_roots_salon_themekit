@@ -1,0 +1,49 @@
+<div class="spa_service_section spa_service_rt_section">
+   <h1>{{section.settings.title}}</h1>
+   {% include 'spa-service' %}
+</div>
+{% schema %} 
+{
+   "name":"Feet Services",
+   "settings":[
+      {
+          "id":"title",
+          "type":"text",
+          "label":"Section Heading"
+      },      
+      { 
+        "id": "image", 
+        "type": "image_picker", 
+        "label": "Image" 
+      } 
+   ],
+   "blocks":[
+      {
+         "type":"feet",
+         "name":"Feet Services",
+         "settings":[
+            {
+               "id":"title",
+               "type":"text",
+               "label":"Service"
+            },
+            {
+               "id":"price",
+               "type":"text",
+               "label":"Price"
+            },
+            {
+               "id":"time",
+               "type":"text",
+               "label":"Duration"
+            },
+            {
+               "id":"desc",
+               "type":"textarea",
+               "label":"Description"
+            }            
+         ]
+      }
+   ]
+}
+{% endschema %}

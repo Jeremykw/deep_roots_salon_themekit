@@ -1,0 +1,9 @@
+{% for block in section.blocks %}
+  <div class="spa_section_item">
+    <div class="spa_service_title"><h4>{{ block.settings.title }}</h4></div>
+    <div class="spa_service_price">${{ block.settings.price }}</div>
+    <div class="spa_service_time"><i>{{ block.settings.time }}</i></div>
+    <div class="spa_service_desc"><p>{{ block.settings.desc }}</p></div>
+  </div>
+  <italic></italic>
+{% endfor %} 

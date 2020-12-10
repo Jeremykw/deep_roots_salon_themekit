@@ -1,0 +1,33 @@
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <!-- <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div> -->
+        <div class="spa_service_container">
+          <div class="spa_service_column">
+            {% section 'spa-hands' %}
+            {% section 'spa-face' %}  
+          </div>
+          <div class="spa_service_column">
+            {% section 'spa-feet' %}
+            {% section 'spa-body' %}
+          </div>                    
+
+        </div>
+
+
+      <!-- Rules and Regulations -->
+      {% section 'rules_and_regulations' %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .spa_service_container {
+    background-image: url({{ 'bg_fern.jpg' | asset_img_url: '1200x' }});
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+  }
+</style>

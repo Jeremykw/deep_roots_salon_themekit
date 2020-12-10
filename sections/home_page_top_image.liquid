@@ -1,0 +1,30 @@
+<div style="background-image:url({{ section.settings.background_image | img_url: '1200x' | img_tag: 'Spa Home Page Background Image' }})" >
+  {% comment %}
+  {% endcomment %}
+  {{ section.settings.image | img_url: '1000x' | img_tag: 'Spa Home Page Old House Image', 'homepage_image' }}
+  
+</div>
+
+<style>
+
+  
+
+</style>
+
+{% schema %} 
+{
+   "name":"Top of Home Page Images",
+   "settings":[
+      {
+          "id":"image",
+          "type":"image_picker",
+          "label":"Main Image"
+      },      
+      { 
+        "id": "background_image", 
+        "type": "image_picker", 
+        "label": "Back Ground Image" 
+      } 
+   ]
+}
+{% endschema %}
