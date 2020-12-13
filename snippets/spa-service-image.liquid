@@ -1,0 +1,5 @@
+{% if section.settings.image %}
+   <div class="spa_section_image">
+      {{section.settings.image | img_url: '500x' | img_tag  }}
+   </div>
+{% endif %} 

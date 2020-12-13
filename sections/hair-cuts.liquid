@@ -1,12 +1,52 @@
-{% for block in section.blocks %}
-<div class="cut_colour">
-  <div class="">{{ block.settings.title }}</div>
-  <div class="cut_colour_price">${{ block.settings.cut_price }}</div>
+{% include 'spa-service-image' %}
+
+<div class="spa_service_section spa_service_lt_section">
+   <h1>{{section.settings.title}}</h1>
+   {% include 'spa-service' %}
 </div>
 
-{% endfor %} 
-
-{% schema %} { "name": "Hair Cuts", "settings": [], "blocks": [ {
-"type": "cuts", "name": "Hair Cuts", "settings": [ { "id": "title", "type":
-"text", "label": "Service" }, { "id": "cut_price", "type": "text", "label":
-"Price" } ] } ] } {% endschema %}
+{% schema %} 
+{
+  "name":"Hair Cuts",
+  "settings":[
+      {
+          "id":"title",
+          "type":"text",
+          "label":"Section Heading"
+      },      
+      { 
+        "id": "image", 
+        "type": "image_picker", 
+        "label": "Image" 
+      } 
+   ],
+   "blocks":[
+      {
+         "type":"cuts",
+         "name":"Hair Cuts Services",
+         "settings":[
+            {
+               "id":"title",
+               "type":"text",
+               "label":"Service"
+            },
+            {
+               "id":"price",
+               "type":"text",
+               "label":"Price"
+            },
+            {
+               "id":"time",
+               "type":"text",
+               "label":"Duration"
+            },
+            {
+               "id":"desc",
+               "type":"textarea",
+               "label":"Description"
+            }            
+         ]
+      }
+   ]
+}
+{% endschema %}

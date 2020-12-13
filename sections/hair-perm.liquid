@@ -1,8 +1,53 @@
-<div class="cut_colour">
-  <div class="">{{ section.settings.perm }}</div>
-  <div class="cut_colour_price">${{ section.settings.perm_price }}</div>
+{% include 'spa-service-image' %}
+
+<div class="spa_service_section spa_service_lt_section">
+   <h1>{{section.settings.title}}</h1>
+   {% include 'spa-service' %}
 </div>
 
-{% schema %} { "name": "Perms", "settings": [ { "id": "perm", "type": "text",
-"label": "Perm" }, { "id": "perm_price", "type": "text", "label": "Perm Price" }
-] } {% endschema %}
+
+{% schema %}
+{
+   "name":"Perms",
+  "settings":[
+      {
+          "id":"title",
+          "type":"text",
+          "label":"Section Heading"
+      },      
+      { 
+        "id": "image", 
+        "type": "image_picker", 
+        "label": "Image" 
+      } 
+   ],
+   "blocks":[
+      {
+         "type":"perms",
+         "name":"Perms",
+         "settings":[
+            {
+               "id":"title",
+               "type":"text",
+               "label":"Service"
+            },
+            {
+               "id":"price",
+               "type":"text",
+               "label":"Price"
+            },
+            {
+               "id":"time",
+               "type":"text",
+               "label":"Duration"
+            },
+            {
+               "id":"desc",
+               "type":"textarea",
+               "label":"Description"
+            }            
+         ]
+      }
+   ]
+}
+{% endschema %}

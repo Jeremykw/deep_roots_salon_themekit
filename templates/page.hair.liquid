@@ -1,31 +1,39 @@
 <div class="page-width">
   <div class="grid">
     <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-      <div class="section-header text-center">
-        <h1>{{ page.title }}</h1>
+
+      <div class="spa_service_container">
+        <div class="spa_service_column">
+          {% section 'hair-colour' %}
+        </div> 
+        <div class="spa_service_column">
+          {% section 'hair-cuts' %}
+          {% section 'hair-perm' %}  
+        </div> 
       </div>
       <!-- Cuts -->
-      <div class="service_grid">
+      <!-- <div class="service_grid">
         {% section 'hair-cut-images' %}
         <div class="service">
           <h2>Cuts & Styles</h2>
           {% section 'hair-cuts' %}
         </div>
-      </div>
+      </div> -->
 
       <!-- Colours -->
-      <div class="service_grid">
+      <!-- <div class="service_grid">
         <div class="service">
           <h2>Colours</h2>
           {% section 'hair-colour' %}
         </div>
         <div class="colour_image">{% section 'hair-colour-images' %}</div>
-      </div>
+      </div> -->
 
       <!-- Perms -->
-      <div class="perm">
+      <!-- <div class="perm">
         <div class="service">{% section 'hair-perm' %}</div>
-      </div>
+      </div> -->
+
 
       <!-- Rules and Regulations -->
       {% section 'rules_and_regulations' %}
@@ -34,6 +42,10 @@
 </div>
 
 <style>
-
-
+  .spa_service_container {
+    background-image: url({{ 'bg_fern.jpg' | asset_img_url: '1200x' }});
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+  }
 </style>
